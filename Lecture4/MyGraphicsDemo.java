@@ -9,14 +9,14 @@ import javax.swing.*;
 public class MyGraphicsDemo extends JFrame {
 	// Height and width of the window as well as the
 	// width for each of 4 objects
-	private static final int WINDOW_HEIGHT = 120;
+	private static final int WINDOW_HEIGHT = 300;
 	private static final int WINDOW_WIDTH = 900;
 	private static final int GRID_WIDTH = WINDOW_WIDTH / 4;
 
 	// The initial starting positions for the objects
-	private static final int START_Y = 22; //<- Why is this not zero?
+	private static final int START_Y = 50;
 	private static final int START_X = 5;
-	private static final int STRING_Y = WINDOW_HEIGHT - 3;
+	private static final int STRING_Y = WINDOW_HEIGHT - 50;
 
 	// Normal color for drawing
 	private static final Color FOREGROUND_COLOR = Color.BLACK;
