@@ -46,20 +46,19 @@ public class DoublyLinkedList<Item> implements Iterable<Item> {
 	 * Returns item at the specified index.
 	 * 
 	 * @param index
-	 *            the index of the item to be returned
+	 *              the index of the item to be returned
 	 * @return the item at specified index
-	 * @pre: 0<=index<size 
+	 * @pre: 0<=index<size
 	 */
 	public Item get(int index) {
-		if (index >= size || index < 0){
+		if (index >= size || index < 0) {
 			throw new IndexOutOfBoundsException("Index " + index + " out of bounds");
 		}
-		if (index == 0)
+		if (index == 0) {
 			return head.item;
-
-		else if (index == size() - 1)
+		} else if (index == size() - 1) {
 			return tail.item;
-
+		}
 		Node finger = head;
 		// search for index-th element or end of list
 		while (index > 0) {
@@ -73,7 +72,7 @@ public class DoublyLinkedList<Item> implements Iterable<Item> {
 	 * Inserts the specified item at the head of the doubly linked list.
 	 * 
 	 * @param item
-	 *            the item to be inserted
+	 *             the item to be inserted
 	 */
 	public void addFirst(Item item) {
 		// Save the old node
@@ -86,11 +85,11 @@ public class DoublyLinkedList<Item> implements Iterable<Item> {
 		head.prev = null;
 
 		// if first node to be added, adjust tail to it.
-		if (tail == null)
+		if (tail == null) {
 			tail = head;
-		else
+		} else {
 			oldHead.prev = head;
-
+		}
 		size++; // increase number of nodes in doubly linked list.
 	}
 
@@ -98,7 +97,7 @@ public class DoublyLinkedList<Item> implements Iterable<Item> {
 	 * Inserts the specified item at the tail of the doubly linked list.
 	 * 
 	 * @param item
-	 *            the item to be inserted
+	 *             the item to be inserted
 	 */
 	public void addLast(Item item) {
 		// Save the old node
@@ -111,11 +110,11 @@ public class DoublyLinkedList<Item> implements Iterable<Item> {
 		tail.prev = oldTail;
 
 		// if first node to be added, adjust head to it.
-		if (head == null)
+		if (head == null) {
 			head = tail;
-		else
+		} else {
 			oldTail.next = tail;
-
+		}
 		size++;
 	}
 
@@ -123,13 +122,13 @@ public class DoublyLinkedList<Item> implements Iterable<Item> {
 	 * Inserts the specified item at the specified index.
 	 * 
 	 * @param index
-	 *            the index to insert the item
+	 *              the index to insert the item
 	 * @param item
-	 *            the item to insert
+	 *              the item to insert
 	 * @pre: 0<=index<=size
 	 */
 	public void add(int index, Item item) {
-		if (index > size || index < 0){
+		if (index > size || index < 0) {
 			throw new IndexOutOfBoundsException("Index " + index + " out of bounds");
 		}
 		if (index == 0) {
@@ -204,12 +203,12 @@ public class DoublyLinkedList<Item> implements Iterable<Item> {
 	 * Retrieves and removes the item at the specified index.
 	 * 
 	 * @param index
-	 *            the index of the item to be removed
+	 *              the index of the item to be removed
 	 * @return the item previously at the specified index
 	 * @pre: 0<=index<size
 	 */
 	public Item remove(int index) {
-		if (index >= size || index < 0){
+		if (index >= size || index < 0) {
 			throw new IndexOutOfBoundsException("Index " + index + " out of bounds");
 		}
 		if (index == 0) {
