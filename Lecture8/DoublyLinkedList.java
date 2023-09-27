@@ -166,11 +166,12 @@ public class DoublyLinkedList<Item> implements Iterable<Item> {
 		Node oldHead = head;
 		// Fix pointers.
 		head = head.next;
-		// at least 1 nodes left.
-		if (head != null) {
-			head.prev = null;
-		} else {
+		// if there was only one node in the doubly linked list.
+		if (head == null) {
 			tail = null; // remove final node.
+			
+		} else {
+			head.prev = null;
 		}
 		oldHead.next = null;
 
