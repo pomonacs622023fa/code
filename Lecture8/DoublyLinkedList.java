@@ -30,7 +30,7 @@ public class DoublyLinkedList<Item> implements Iterable<Item> {
 	 * @return true if the doubly linked list does not contain any item
 	 */
 	public boolean isEmpty() {
-		return size() == 0;
+		return size == 0; // return head == null && tail == null;
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class DoublyLinkedList<Item> implements Iterable<Item> {
 		}
 		if (index == 0) {
 			return head.item;
-		} else if (index == size() - 1) {
+		} else if (index == size - 1) {
 			return tail.item;
 		}
 		Node finger = head;
@@ -133,7 +133,7 @@ public class DoublyLinkedList<Item> implements Iterable<Item> {
 		}
 		if (index == 0) {
 			addFirst(item);
-		} else if (index == size()) {
+		} else if (index == size) {
 			addLast(item);
 		} else {
 
@@ -213,7 +213,7 @@ public class DoublyLinkedList<Item> implements Iterable<Item> {
 		}
 		if (index == 0) {
 			return removeFirst();
-		} else if (index == size() - 1) {
+		} else if (index == size - 1) {
 			return removeLast();
 		} else {
 			Node previous = null;
