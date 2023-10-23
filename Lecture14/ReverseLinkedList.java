@@ -1,6 +1,6 @@
 public class ReverseLinkedList<Item> extends SinglyLinkedList<Item>{
 
-    public void reverseLinkedList() {
+    public void reverseLinkedListIteratively() {
 		Node previous = null;
 		Node current = head;
 		Node next;
@@ -13,6 +13,19 @@ public class ReverseLinkedList<Item> extends SinglyLinkedList<Item>{
 		head = previous;
 	}
 
+	public Node reverseLinkedListRecursively(Node head) {
+		Node first;
+	
+		if (head==null || head.next == null)
+			return head;
+	
+		first = reverseLinkedListRecursively(head.next);
+		head.next.next = head;
+		head.next = null;
+	
+		return first;
+	}
+	
 
     public static void main(String[] args) {
 		ReverseLinkedList<Integer> sll = new ReverseLinkedList<Integer>();
@@ -20,8 +33,11 @@ public class ReverseLinkedList<Item> extends SinglyLinkedList<Item>{
 		sll.add(2);
 		sll.add(3);
         System.out.println(sll);
-		sll.reverseLinkedList();
+		sll.head = sll.reverseLinkedListRecursively(sll.head);
         System.out.println(sll);
+		sll.reverseLinkedListIteratively();
+        System.out.println(sll);
+
 
 	}
 
